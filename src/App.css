@@ -1,49 +1,50 @@
-body {
-  background-color: rgb(0, 0, 0);
-}
-
 
 h1 {
-   color: rgb(96, 158, 212)
+   color: white;
+   text-align: center;
 }
 
-nav a {
+h2 {
+  color: black;
+  text-align: left;
+}
+
+.carro{
+  text-align: left;
+}
+
+.header{
+  background-color: rgb(133, 130, 128);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.header__navlink{
   padding: 3px;
   text-decoration: none;
-  color: rgb(96, 158, 212);
+  color: aliceblue  ;
 }
 
-
-.App {
-  text-align: center;
-}
-
-NavBar ul li {
-  color: white;
+p {
+  color: black;
+  text-align: left;
 }
 
 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
