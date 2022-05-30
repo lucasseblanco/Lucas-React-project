@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 
 
+
 function App() {
 
   
@@ -14,7 +15,8 @@ function App() {
 
         <NavBar/>
 
-        <ItemListContainer greeting = "Tercer entrega" />
+
+        <ItemListContainer greeting = "greeting" />
       
     </div>
   );
