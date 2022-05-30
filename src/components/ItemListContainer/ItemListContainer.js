@@ -1,4 +1,4 @@
-
+import ItemCount from '../Counter/ItemCount'
 
 
 const ItemListContainer = (props) => {
@@ -8,8 +8,8 @@ const ItemListContainer = (props) => {
         <hr />
 
         <p>Bienvenida {props.greeting}</p>
+        <ItemCount/>
 
-        <button className="btn btn-primary" >ANADIR</button>
     </section>
   )
 }
