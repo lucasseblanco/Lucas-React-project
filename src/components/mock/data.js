@@ -1,9 +1,9 @@
 const productos = [
     {
       id: 1,
-      nombre: 'Tabla 1',
+      nombre: 'Tabla Sup',
       precio: 1200,
-      img: 'Imagen 1'
+      descripcion: 'Tabla de 9 pies ideal para principiantes',
     },
     {
       id: 2,

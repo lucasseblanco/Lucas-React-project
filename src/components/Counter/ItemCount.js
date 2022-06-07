@@ -37,12 +37,12 @@ const ItemCount = () => {
 
     
     <div className="container my-5" >
-        <h2>contador</h2>
-        <hr />
+        <h4>Seleccionar cantidad</h4>
+        <hr/>
         <button className="btn btn-primary" onClick={sumar}>+</button>
-        <button className="btn btn-primary" onClick={restar}>-</button>
-        <p onClick={sumar} >{contador}</p>
-        <button className="btn btn-primary">Confirmar</button>
+        <button className="btn btn-secondary" onClick={restar}>-</button>
+        <p onClick={sumar} className="container my-5"  >{contador}</p>
+        <button className="btn btn-primary" variant="success">Confirmar</button>
         
     </div>
   )
