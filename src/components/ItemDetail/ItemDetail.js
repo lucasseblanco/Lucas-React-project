@@ -1,4 +1,4 @@
-import ItemCount from '../Counter/ItemCount'
+/*import ItemCount from '../Counter/ItemCount'
 import Item from "../Item/Item"
 import productos from '../mock/data'
 
@@ -24,4 +24,4 @@ const ItemDetail = ( {items} ) => {
 }
 
 export default ItemDetail
-
+*/

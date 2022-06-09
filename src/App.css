@@ -3,6 +3,11 @@ img {
 }
 
 
+footer{
+  background-color: black ;
+  color: aliceblue;
+}
+
 h1 {
    color: white;
    text-align: center;

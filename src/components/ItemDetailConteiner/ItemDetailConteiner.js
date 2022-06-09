@@ -1,36 +1,29 @@
 import { useEffect, useState } from "react"
-import { Container, Spinner } from "react-bootstrap"
-import productos from "../mock/data"
-import ItemDetail from "../ItemDetail/ItemDetail"
-import Item from "../Item/Item"
-
-
-const primerProducto = (productos.find((prod1 => prod1.id === 1)));
-
-console.log(primerProducto)
+import { Spinner } from "react-bootstrap"
+import { pedirDatos } from "../../mock/PedirDatos"
+import { useParams } from "react-router-dom"
+import ItemDetail1 from "../ItemDetail/ItemDetail1"
 
 
 
+const ItemDetailContainer = () => {
 
-
-const getItem =  () => new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve([primerProducto]);
-        }, 2000);
-    })
-
-
-const ItemDetailContainer = (props) => {
-
-    const [items, setItems] = useState([])
+    const [item, setItem] = useState(null)
     const [loading, setLoading] = useState(true)
+
+    
+
+    const { itemId } = useParams()
+    console.log(itemId)
+    console.log(item)
+    console.log('sdjklasjdklsa')
 
     useEffect(() => {
         setLoading(true)
 
-        getItem()
+        pedirDatos()
             .then((resp) => {
-                setItems( resp )
+               setItem( resp.find((item) => item.id === Number(itemId)) )
             })
             .catch((error) => {
                 console.log('ERROR', error)
@@ -42,21 +35,15 @@ const ItemDetailContainer = (props) => {
 
     return (
         <section className="container my-5">
-
             
-                  
             {
                 loading
-                ?   <Spinner animation="grow" role="status">
+                ?   <Spinner animation="border" role="status">
                         <span className="visually-hidden">Loading...</span>
                     </Spinner>
 
-                :  <ItemDetail items={items}/> 
-                
-
-                
+                :  <ItemDetail1 item={item}/>
             }
-            
             
         </section>
     )
