@@ -5,24 +5,29 @@ import { pedirDatos } from "../../mock/PedirDatos"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from 'react-router-dom'
 
+const id1 = 'aversifunca'
 
 const ItemListContainer = (props) => {
+
+
+    
     
 
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const { categoryId } = useParams()
+    const {categoryID} = useParams()
+    console.log(categoryID)
 
     useEffect(() => {
         setLoading(true)
 
         pedirDatos()
             .then((resp) => {
-                if (!categoryId) {
+                if (!categoryID) {
                     setItems( resp )
                 } else {
-                    setItems( resp.filter((item) => item.categoria === categoryId) )
+                    setItems( resp.filter((item) => item.categoria === categoryID) )
                 }
             })
             .catch((error) => {
@@ -31,12 +36,12 @@ const ItemListContainer = (props) => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [categoryId])
+    }, [])
 
     return (
         <section className="container my-5">
 
-            <p>Bienvenidos! {props.greeting}</p>
+            <p>{props.greeting}</p>
             
             {
                 loading
@@ -48,7 +53,7 @@ const ItemListContainer = (props) => {
 
                 
             }
-            <ItemCount/>
+            
             
         </section>
     )

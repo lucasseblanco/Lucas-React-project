@@ -1,49 +1,29 @@
-import { useState, useEffect } from "react"
-const ItemCount = () => {
-    
-    const [contador, setContador] = useState(0)
-    const [stock, setStock] = useState (10)
+import { useState } from "react"
+
+const ItemCount = ({max, setCounter, counter, onAdd }) => {
 
 
-    
-
-
-    const sumar = () => {
-        if (stock>0) {
-        setContador(contador+1)
-        setStock(stock-1)
-        console.log(stock);
-        }
-        else{
-            alert('Sin stock')
-        }
-        
-      }
-    
-      const restar = () => {
-        if (stock >= 10) {
-            alert ('pedido en 0');
-        }
-       else{
-           setContador(contador-1)
-           setStock(stock+1)
-           console.log(stock);
+    const handleSumar = () => {
+       counter < max && setCounter(counter + 1)
+       if (counter === max) {
+           alert('Seleccionaste ' + max + ' items. No hay mas stock')
        }
-        
-      }
-    
+    }
+
+    const handleRestar = () => {
+        counter > 1 && setCounter(counter - 1)
+    }
+
 
   return (
-
-    
-    <div className="container my-5" >
-        <h4>Seleccionar cantidad</h4>
-        <hr/>
-        <button className="btn btn-primary" onClick={sumar}>+</button>
-        <button className="btn btn-secondary" onClick={restar}>-</button>
-        <p onClick={sumar} className="container my-5"  >{contador}</p>
-        <button className="btn btn-primary" variant="success">Confirmar</button>
-        
+    <div className="my-3" >
+    <button onClick={handleRestar} className="btn btn-outline-primary" >-</button>
+    <span className="mx-2" > {counter} </span>
+    <button onClick={handleSumar} className="btn btn-primary" >+</button>
+    <hr />
+    <p>Unidades disponibles: {max}</p>
+    <hr />
+    <button onClick={onAdd} className="btn btn-success" >Agregar al carro</button>
     </div>
   )
 }

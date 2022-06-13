@@ -3,6 +3,7 @@ import { Spinner } from "react-bootstrap"
 import { pedirDatos } from "../../mock/PedirDatos"
 import { useParams } from "react-router-dom"
 import ItemDetail1 from "../ItemDetail/ItemDetail1"
+import Item from "../Item/Item"
 
 
 
@@ -16,7 +17,6 @@ const ItemDetailContainer = () => {
     const { itemId } = useParams()
     console.log(itemId)
     console.log(item)
-    console.log('sdjklasjdklsa')
 
     useEffect(() => {
         setLoading(true)
