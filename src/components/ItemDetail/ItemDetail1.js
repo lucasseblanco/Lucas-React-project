@@ -1,11 +1,20 @@
 import { useNavigate } from "react-router-dom"
 import '../../App.css';
-import ItemCount from "../Counter/ItemCount"
-import { useState } from "react";
+import ItemCount from "../Counter/ItemCount";
+import { useState, useContext } from "react";
+import CartContext from "../Context/CartContext";
+import { Link } from "react-router-dom";
 
 
 
 const ItemDetail1 = ({item}) => {
+
+  const {addItem, isInCart} = useContext(CartContext)
+
+  console.log(isInCart(item.id))
+
+  
+  
 
   const [cantidad, setCantidad] = useState(1)
 
@@ -20,24 +29,46 @@ const ItemDetail1 = ({item}) => {
        ...item,
        cantidad
      }
+     addItem(itemToCart)
+     
    }
 
-  return (
-    <div>
-      <h2>{item.nombre}</h2>
+   
+
+   
+
+   
+     return(
+       <div>
+
+<h2>{item.nombre}</h2>
       <img src={`../../${item.img}`} alt={item.nombre}/>
       <h2>{item.categoria}</h2>
       <h2>{item.precio}</h2>
+      <hr />
+      {
+        isInCart(item.id)
+        ?
+        <Link to="/Carrito/Carrito" >
+          <button className="btn btn-primary my-2" >Terminar compra</button>
+          <hr />
+      </Link>
+      
+      :
       <ItemCount
-        max={item.stock}  
-        counter={cantidad}
-        setCounter={setCantidad}
-        onAdd={handleAgregar}
-      />
-
+      max={item.stock}  
+      counter={cantidad}
+      setCounter={setCantidad}
+      onAdd={handleAgregar}
+    />
+    
+      }
+      
       <button onClick={handleVolver} className="btn btn-primary my-2" >Volver</button>
+       </div>
+       
+     )
+   }
+   
 
-    </div>
-  )
-}
 export default ItemDetail1
