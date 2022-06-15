@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import CartContext from "../Context/CartContext";
 import { useNavigate } from "react-router-dom";
+import { BsTrash2Fill } from "react-icons/bs"
 
 
 
 const Carrito = ({item}) => {
 
-  const {cart, totalCarrito, emptyCart} = useContext(CartContext)
+  const {cart, totalCarrito, emptyCart, removeItem} = useContext(CartContext)
 
   const navigate = useNavigate()
 
@@ -25,6 +26,7 @@ const Carrito = ({item}) => {
           <img src={`../../${item.img}`} alt={item.nombre}/>
           <p>Cantidad: {item.cantidad}</p>
           <h5>precio por unidad: {item.precio}</h5>
+          <button onClick={() => removeItem(item.id)} className="btn btn-danger" ><BsTrash2Fill/></button>
           <h6>precio total: {item.precio * item.cantidad}</h6>
           <hr />
         </div>

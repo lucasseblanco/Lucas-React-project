@@ -33,13 +33,18 @@ export const CartProvider = ({children}) =>{
     setCart ([])
   }
 
+  const removeItem = (id) => {
+    setCart( cart.filter((prod) => prod.id !== id) )
+  }
+
     return (
     <CartContext.Provider value={{cart, 
         addItem,
         isInCart,
         totalCarrito,
         totalQuantity,
-        emptyCart}} 
+        emptyCart,
+      removeItem}} 
     >
         {children} 
 
@@ -48,5 +53,7 @@ export const CartProvider = ({children}) =>{
 }
 
 export default CartContext
+
+
 
 
