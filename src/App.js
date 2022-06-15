@@ -6,34 +6,15 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Carrito from './components/Carrito/Carrito';
 import { useState } from 'react';
-import CartContext from './components/Context/CartContext';
+import { CartProvider } from './components/Context/CartContext';
 import { Item } from './components/Item/Item';
 import ItemDetailContainer from './components/ItemDetailConteiner/ItemDetailConteiner';
 
-
-
-
-
-
 function App() {
   
-  
-  const [cart,setCart] = useState([])
-  console.log(cart )
-
-  const addItem = (item) => {
-    setCart([...cart, item])
-  }
-
-  const isInCart = (id) => {
-    return cart.some((prod)=> prod.id === id) /*Some es como find pero con true o false*/
-  }
-
-    
-
   return (
 
-    <CartContext.Provider value={{cart, addItem, isInCart}}>
+    <CartProvider>
 
     <BrowserRouter>
     <div className="App">
@@ -52,7 +33,8 @@ function App() {
       <Footer/>
     </div>
     </BrowserRouter>
-    </CartContext.Provider>
+    
+    </CartProvider>
   );
 }
 
