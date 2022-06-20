@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 const ItemCount = ({max, setCounter, counter, onAdd }) => {
 
@@ -15,16 +16,37 @@ const ItemCount = ({max, setCounter, counter, onAdd }) => {
     }
 
 
+    const btnRestarConfig = {
+      onClick: handleRestar,
+      className: ` btn mx-1 ${counter === 1 ? "btn btn-danger" : "btn btn-outline-primary" } ${counter === 1 ? "min-value" : ''} `,
+      disabled: counter ===1
+    }
+
+    if (max === 0){
+      return (
+        <div className="my-2" >
+          sin stock
+        </div>
+      )
+    }
+
+
   return (
     <div className="my-3" >
-    <button onClick={handleRestar} className="btn btn-outline-primary" >-</button>
+    {<button onClick={handleRestar} className={counter === 1 ? "btn btn-danger" : "btn btn-outline-primary" }
+    disabled={counter ===1} >-</button>}
     <span className="mx-2" > {counter} </span>
-    <button onClick={handleSumar} className="btn btn-primary" >+</button>
+    <button onClick={handleSumar} className= {counter === max ? "btn btn-danger" : "btn btn-outline-primary"  } 
+    disabled= { counter === max }>+</button>
     <hr />
     <p>Unidades disponibles: {max}</p>
     <hr />
-    <button onClick={onAdd} className="btn btn-success" >Agregar al carro</button>
+    <Link to={``} >
+    <button onClick={onAdd} value={false} className="btn btn-success" id="button" >Agregar al carro</button>
+    </Link>
+    
     </div>
   )
 }
 export default ItemCount
+

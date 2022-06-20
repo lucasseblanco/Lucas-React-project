@@ -49,8 +49,8 @@ const ItemDetail1 = ({item}) => {
       {
         isInCart(item.id)
         ?
-        <Link to="/Carrito/Carrito" >
-          <button className="btn btn-primary my-2" >Terminar compra</button>
+        <Link to="/Carrito" >
+          <button className="btn btn-primary my-2" >Ir al carrito</button>
           <hr />
       </Link>
       

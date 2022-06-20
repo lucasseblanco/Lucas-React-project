@@ -8,7 +8,7 @@ const CartWidget = () => {
   const {totalQuantity} = useContext(CartContext)
 
   return (
-    <Link to="./Carrito/Carrito">
+    <Link to="/Carrito">
         <BsCartPlus className="carro"/>
         <span>{totalQuantity()}</span>
     
