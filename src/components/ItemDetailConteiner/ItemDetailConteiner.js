@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
-import { pedirDatos } from "../../mock/PedirDatos"
 import { useParams } from "react-router-dom"
 import ItemDetail1 from "../ItemDetail/ItemDetail1"
-import Item from "../Item/Item"
+import { doc,getDoc } from "firebase/firestore"
+import { db } from "../../firebase/config"
+
 
 
 
@@ -20,17 +21,16 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-
-        pedirDatos()
-            .then((resp) => {
-               setItem( resp.find((item) => item.id === Number(itemId)) )
-            })
-            .catch((error) => {
-                console.log('ERROR', error)
-            })
-            .finally(() => {
+        const docRef = doc(db, "productos", itemId)
+        getDoc(docRef)
+            .then((doc) => {
+                setItem({id: doc.id, ...doc.data()})
+            } )
+            .finally(() =>{
                 setLoading(false)
-            })
+            } )
+
+
     }, [])
 
     return (

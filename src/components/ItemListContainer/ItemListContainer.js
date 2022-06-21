@@ -1,11 +1,11 @@
-import ItemCount from '../Counter/ItemCount'
 import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
-import { pedirDatos } from "../../mock/PedirDatos"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from 'react-router-dom'
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../../firebase/config"
 
-const id1 = 'aversifunca'
+
 
 const ItemListContainer = (props) => {
 
@@ -17,25 +17,30 @@ const ItemListContainer = (props) => {
     const [loading, setLoading] = useState(true)
 
     const {categoryID} = useParams()
-    console.log(categoryID)
 
     useEffect(() => {
         setLoading(true)
-
-        pedirDatos()
+        
+        // 1.- armar la referencia
+        const productosRef = collection(db, "productos")
+        const q = categoryID ? query(productosRef, where("categoria", "==", categoryID)) : productosRef
+        // 2.- (async) llamar a Firebase con la referencia anterior
+        getDocs(q)
             .then((resp) => {
-                if (!categoryID) {
-                    setItems( resp )
-                } else {
-                    setItems( resp.filter((item) => item.categoria === categoryID) )
-                }
-            })
-            .catch((error) => {
-                console.log('ERROR', error)
-            })
+                const newItems = resp.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                }  )
+                setItems(newItems)    
+            } )
+            
             .finally(() => {
                 setLoading(false)
             })
+
+
     }, [])
 
     return (

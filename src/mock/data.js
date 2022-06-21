@@ -1,6 +1,3 @@
-import { Image } from "react-bootstrap"
-
-
 const productos = [
     {
       id: 1,
