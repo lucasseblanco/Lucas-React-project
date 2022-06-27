@@ -54,9 +54,8 @@ const Carrito = ({item}) => {
   
   
       <h3>TOTAL: {totalCarrito()}</h3>
-      <Link to="/FinalizarCompra" className="btn btn-success" > Ir a pagar </Link>
-      <hr />
       <button onClick={emptyCart} className="btn btn-danger" >Vaciar Carro</button>
+      <Link to="/FinalizarCompra" className="btn btn-success mx-4 " > Ir a pagar </Link>
       <hr />
       <button onClick={handleVolver} className="btn btn-primary my-2" >Volver</button>
       </>

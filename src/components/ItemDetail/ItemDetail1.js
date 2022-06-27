@@ -11,7 +11,6 @@ const ItemDetail1 = ({item}) => {
 
   const {addItem, isInCart} = useContext(CartContext)
 
-  console.log(isInCart(item.id))
 
   
   
