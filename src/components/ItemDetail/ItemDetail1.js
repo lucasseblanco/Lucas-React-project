@@ -38,14 +38,14 @@ const ItemDetail1 = ({item}) => {
 
 <h4 className="ItemDetailName" >{item.nombre}</h4>
       <img src={`../../${item.img}`} alt={item.nombre}/>
-      <h2>{item.categoria}</h2>
-      <h2>{item.precio}</h2>
+      <h4 className="ItemDetailName" > Categoria: {item.categoria}</h4>
+      <h4 className="ItemDetailName2" > Precio: $ {item.precio}</h4>
       <hr />
       {
         isInCart(item.id)
         ?
         <Link to="/Carrito" >
-          <button className="btn btn-primary my-2" >Ir al carrito</button>
+          <button className="irAlCarrito">Ir al carrito</button>
           <hr />
       </Link>
       
@@ -59,7 +59,7 @@ const ItemDetail1 = ({item}) => {
     
       }
       
-      <button onClick={handleVolver} className="btn btn-primary my-2" >Volver</button>
+      <button onClick={handleVolver} className="botonVolver" >Volver</button>
        </div>
        
      )

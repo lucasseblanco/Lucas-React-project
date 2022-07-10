@@ -41,12 +41,11 @@ const ItemListContainer = (props) => {
             })
 
 
-    }, [])
+    }, [categoryID])
 
     return (
         <section className="container my-5">
 
-            <p>{props.greeting}</p>
             
             {
                 loading
@@ -54,7 +53,7 @@ const ItemListContainer = (props) => {
                         <span className="visually-hidden">Loading...</span>
                     </Spinner>
 
-                :  <ItemList items={items}/>
+                :  <ItemList items={items}  />
 
                 
             }

@@ -29,7 +29,7 @@ const Carrito = ({item}) => {
       <>
       <h2 className="CarroVacio"> Carro vacio</h2>
       <hr />
-      <Link to="./Carrito" className="CarroBoton"   > Ir a comprar </Link>
+      <Link to="./Carrito" className="CarroBoton"> Ir a comprar </Link>
 
        </>
 
@@ -40,12 +40,12 @@ const Carrito = ({item}) => {
         cart.map((item) => {
           return (
           <div key={item.id} className="my-2">
-            <h4>{item.nombre}</h4>
+            <h4 className="itemDetail" >{item.nombre}</h4>
             <img src={`../../${item.img}`} alt={item.nombre}/>
             <p>Cantidad: {item.cantidad}</p>
-            <h5>precio por unidad: {item.precio}</h5>
-            <button onClick={() => removeItem(item.id)} className="btn btn-danger" ><BsTrash2Fill/></button>
-            <h6>precio total: {item.precio * item.cantidad}</h6>
+            <h5 className="carritoFont1" >precio por unidad: {item.precio}</h5>
+            <button onClick={() => removeItem(item.id)} className="btn btn-outline-dark" ><BsTrash2Fill/></button>
+            <h6 className="carritoFont2"> Precio total: $ {item.precio * item.cantidad}</h6>
             <hr />
           </div>
           );
@@ -53,11 +53,12 @@ const Carrito = ({item}) => {
       }
   
   
-      <h3>TOTAL: {totalCarrito()}</h3>
-      <button onClick={emptyCart} className="btn btn-danger" >Vaciar Carro</button>
-      <Link to="/FinalizarCompra" className="btn btn-success mx-4 " > Ir a pagar </Link>
+      <h4 className="totalCarrito" >TOTAL:$ {totalCarrito()}</h4>
+      <button onClick={emptyCart} className="btn btn-outline-dark" >Vaciar Carro</button>
+      <Link to="/FinalizarCompra" className="btn btn-outline-success mx-4"> Ir a pagar </Link>
       <hr />
-      <button onClick={handleVolver} className="btn btn-primary my-2" >Volver</button>
+      <br />
+      <button onClick={handleVolver} className="btn btn-outline-success">Volver</button>
       </>
   
     }

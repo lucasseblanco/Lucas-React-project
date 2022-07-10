@@ -79,9 +79,9 @@ const Checkout = () => {
     if (orderId) {
         return (
             <div className="container my-5">
-                <h2>Gracias por comprar</h2>
+                <h2 className="compraTitulo" >Gracias por su compra!</h2>
                 <hr/>
-                <p>Su número de orden es: {orderId}</p>
+                <h3 className="numeroDeOrden" >Su número de orden es: {orderId}</h3>
             </div>
         )
     }
@@ -92,7 +92,7 @@ const Checkout = () => {
 
     return (
         <div className="container my-5">
-            <h2>Checkout</h2>
+            <h2 className="compraTitulo">Datos para la compra:</h2>
             <hr/>
             
             <Formik
@@ -112,7 +112,7 @@ const Checkout = () => {
                             onChange={formik.handleChange}
                             type={"text"}
                             placeholder="Nombre Completo"
-                            className="form-control my-2"
+                            className="form-control my-3"
                         />
                         {formik.errors.nombre && <p className="alert alert-danger">{formik.errors.nombre}</p>}
 
@@ -122,7 +122,7 @@ const Checkout = () => {
                             onChange={formik.handleChange}
                             type={"text"}
                             placeholder="mail@ejemplo.com"
-                            className="form-control my-2"
+                            className="form-control my-3"
                         />
                         {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
 
@@ -131,17 +131,17 @@ const Checkout = () => {
                             name="direccion"
                             onChange={formik.handleChange}
                             type={"text"}
-                            placeholder="Ejemplo 123"
-                            className="form-control my-2"
+                            placeholder="Direccion 123"
+                            className="form-control my-3"
                         />
                         {formik.errors.direccion && <p className="alert alert-danger">{formik.errors.direccion}</p>}
-                        <button type="submit" className="btn btn-primary">Terminar compra</button>
+                        <button type="submit" className="btn btn-outline-success">Terminar compra</button>
                     </form>
                 )}
             </Formik>
 
             
-            <button onClick={emptyCart} className="btn btn-danger my-2">Cancelar mi compra</button>
+            <button onClick={emptyCart} className="btn btn-outline-secondary my-2">Cancelar mi compra</button>
         </div>
     )
 }

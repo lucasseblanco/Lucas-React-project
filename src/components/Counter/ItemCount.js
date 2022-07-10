@@ -33,10 +33,10 @@ const ItemCount = ({max, setCounter, counter, onAdd }) => {
 
   return (
     <div className="my-3" >
-    {<button onClick={handleRestar} className={counter === 1 ? "btn btn-danger" : "btn btn-outline-primary" }
+    {<button onClick={handleRestar} className={counter === 1 ? "btn btn-secondary" : "btn btn-outline-dark" }
     disabled={counter ===1} >-</button>}
     <span className="mx-2" > {counter} </span>
-    <button onClick={handleSumar} className= {counter === max ? "btn btn-danger" : "btn btn-outline-primary"  } 
+    <button onClick={handleSumar} className= {counter === max ? "btn btn-secondary" : "btn btn-outline-success"  } 
     disabled= { counter === max }>+</button>
     <hr />
     <p>Unidades disponibles: {max}</p>

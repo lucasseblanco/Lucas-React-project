@@ -8,14 +8,13 @@ const Item = ({item}) => {
 
     return (
         <div>
-            <h4>{item.nombre}</h4>
+            <h4 className="itemColor" >{item.nombre}</h4>
             <img alt="prods" src={`../${item.img}`}/>
-            <p>{item.desc}</p>
-            <h4>Precio: ${item.precio}</h4>
-            <br />
-            <h5>{item.descripcion}</h5>
+            <p className="itemColor"  >{item.desc}</p>
+            <h4 className="itemColor"  > Precio: ${item.precio}</h4>
+            <h6 className="itemColor"  >{item.descripcion}</h6>
             <Link to={`/Item/${item.id}`} >
-                <button className="btn btn-primary my-2 "> Seleccionar </button>
+                <button className="itemSeleccionar"> Seleccionar </button>
             </Link>
             <hr />
         </div>
