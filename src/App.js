@@ -6,9 +6,7 @@ import ItemDetailContainer from './components/ItemDetailConteiner/ItemDetailCont
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Carrito from './components/Carrito/Carrito';
-import { useState } from 'react';
 import { CartProvider } from './components/Context/CartContext';
-import { Item } from './components/Item/Item';
 import FinalizarCompra from './components/FinalizarCompra/FinalizarCompra';
 
 function App() {

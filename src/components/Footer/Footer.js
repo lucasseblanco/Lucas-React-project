@@ -1,7 +1,9 @@
+import { LogoF } from "../Logo/LogoF"
+
 const Footer = () => {
   return (
     <footer>
-        Footer
+        <LogoF/>
     </footer>
   )
 }

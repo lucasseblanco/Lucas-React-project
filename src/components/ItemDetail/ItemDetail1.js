@@ -11,10 +11,6 @@ const ItemDetail1 = ({item}) => {
 
   const {addItem, isInCart} = useContext(CartContext)
 
-
-  
-  
-
   const [cantidad, setCantidad] = useState(1)
 
    const navigate = useNavigate()
@@ -40,7 +36,7 @@ const ItemDetail1 = ({item}) => {
      return(
        <div>
 
-<h2>{item.nombre}</h2>
+<h4 className="ItemDetailName" >{item.nombre}</h4>
       <img src={`../../${item.img}`} alt={item.nombre}/>
       <h2>{item.categoria}</h2>
       <h2>{item.precio}</h2>

@@ -1,11 +1,31 @@
 img {
   height: 400px;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+}
+
+body{
+  background: linear-gradient(to bottom, rgb(240, 213, 165), white);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.Logo{
+  width: 180px;
+  height: 180px;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+  position: absolute; 
+	top:0; 
+	left:0; 
 }
 
 
-footer{
-  background-color: black ;
-  color: aliceblue;
+.LogoF{
+  height: 80px;
+  display: block;
+  width: 300px;  
+  margin: 0 auto;
 }
 
 h1 {
@@ -20,10 +40,18 @@ h2 {
 
 .carro{
   text-align: left;
+  color: rgb(31, 75, 23);
+  width: 50px;
+  height: 50px;
 }
 
+.contador{
+  text-decoration: none;
+  color: rgb(31, 75, 23);
+  font-size: 20px;
+  text-align: bottom;
+}
 .header{
-  background-color: rgb(133, 130, 128);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -41,8 +69,63 @@ h2 {
 
 .header__navlink{
   padding: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
   text-decoration: none;
-  color: aliceblue  ;
+  color: rgb(31, 75, 23);
+  font-size: 30px;
+}
+
+.Title{
+  text-decoration: none;
+  color: rgb(31, 75, 23);
+	left:0; 
+  
+}
+
+.nuestrosProductos{
+  padding-top: 75px;
+  color: rgb(31, 75, 23);
+}
+
+.CarroVacio{
+  color: rgb(31, 75, 23);
+  text-align: center;
+  padding-top: 100px;
+}
+
+.CarroBoton{
+  text-decoration: none;
+  color: rgb(226, 226, 226);
+  display: block;
+  width: 110px;  
+  margin: 0 auto;
+  appearance: none;
+  background-color:  rgb(31, 75, 23);
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 16px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.ItemDetailName{
+  color: rgb(31, 75, 23);
+  padding-top: 60px;
+
+}
+
+.Shop{
+  color: rgb(31, 75, 23);
+  font-size: 20px;
+  font-family: cursive;
 }
 
 p {
@@ -57,3 +140,7 @@ p {
 
 
 
+
+
+
+/* CSS */

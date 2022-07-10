@@ -20,16 +20,16 @@ const Carrito = ({item}) => {
 
 
   return(
-    <div className="container my-5"> Carro de compras
+    <div className="container my-5"> 
 
 
     {
       cart.length === 0
       ?
       <>
-      <h2>Carro vacio</h2>
+      <h2 className="CarroVacio"> Carro vacio</h2>
       <hr />
-      <Link to="./Carrito" className="btn btn-primary" > Ir a comprar </Link>
+      <Link to="./Carrito" className="CarroBoton"   > Ir a comprar </Link>
 
        </>
 

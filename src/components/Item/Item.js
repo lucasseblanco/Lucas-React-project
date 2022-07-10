@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import '../../App.css';
 import { Link } from "react-router-dom";
 
@@ -9,8 +8,8 @@ const Item = ({item}) => {
 
     return (
         <div>
-            <h2>{item.nombre}</h2>
-            <img src={`../${item.img}`}/>
+            <h4>{item.nombre}</h4>
+            <img alt="prods" src={`../${item.img}`}/>
             <p>{item.desc}</p>
             <h4>Precio: ${item.precio}</h4>
             <br />
