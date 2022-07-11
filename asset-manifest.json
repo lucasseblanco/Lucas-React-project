@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/LUCAS-REACT-PROJECT/static/css/main.0e72de80.css",
-    "main.js": "/LUCAS-REACT-PROJECT/static/js/main.79f91002.js",
-    "static/js/787.28cb0dcd.chunk.js": "/LUCAS-REACT-PROJECT/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/LUCAS-REACT-PROJECT/index.html",
-    "main.0e72de80.css.map": "/LUCAS-REACT-PROJECT/static/css/main.0e72de80.css.map",
-    "main.79f91002.js.map": "/LUCAS-REACT-PROJECT/static/js/main.79f91002.js.map",
-    "787.28cb0dcd.chunk.js.map": "/LUCAS-REACT-PROJECT/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/SurfingDucks/static/css/main.0e72de80.css",
+    "main.js": "/SurfingDucks/static/js/main.8b1585ec.js",
+    "static/js/787.28cb0dcd.chunk.js": "/SurfingDucks/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/SurfingDucks/index.html",
+    "main.0e72de80.css.map": "/SurfingDucks/static/css/main.0e72de80.css.map",
+    "main.8b1585ec.js.map": "/SurfingDucks/static/js/main.8b1585ec.js.map",
+    "787.28cb0dcd.chunk.js.map": "/SurfingDucks/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0e72de80.css",
-    "static/js/main.79f91002.js"
+    "static/js/main.8b1585ec.js"
   ]
 }
